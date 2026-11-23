@@ -734,4 +734,15 @@ class: text-center
 ---
 
 # Merci pour votre attention
-### L'agentique est un accélérateur — à vous d'en garder le contrôle.
+
+<div class="mt-8 max-w-2xl mx-auto text-left">
+
+**Ressources :**
+
+- 📄 **Poly du cours** : [télécharger le poly (PDF)](https://raw.githubusercontent.com/barais/devsecops.module10/refs/heads/master/poly/poly.pdf)
+
+</div>
+
+<div class="mt-8 text-sm opacity-50">
+Olivier Barais · Module DevSecOps
+</div>
