@@ -1,0 +1,134 @@
+% ============================================================
+% Bibliographie — Cours 10 : Agentique & Risques Supply Chain
+% Université de Rennes · IRISA / DiverSE
+% Références vérifiées (URLs testées le 23/11/2026)
+% ============================================================
+
+% ---- Modèles de langage et agents ----
+
+@article{react_2022,
+  author  = {Yao, Shunyu and Zhao, Jeffrey and Yu, Dian and Du, Nan and Shafran, Izhak and Narasimhan, Karthik and Cao, Yuan},
+  title   = {ReAct: Synergizing Reasoning and Acting in Language Models},
+  journal = {arXiv preprint},
+  volume  = {arXiv:2210.03629},
+  year    = {2022},
+  url     = {https://arxiv.org/abs/2210.03629},
+  note    = {Le pattern Thought → Action → Observation à la base de la boucle agentique},
+}
+
+@online{anthropic_agents,
+  author  = {{Anthropic}},
+  title   = {Building effective agents},
+  year    = {2024},
+  url     = {https://www.anthropic.com/engineering/building-effective-agents},
+  note    = {Quand utiliser un workflow déterministe ou un agent autonome — best practices Anthropic},
+}
+
+@online{mcp_spec,
+  author  = {{Model Context Protocol}},
+  title   = {The Model Context Protocol Specification (2025-06-18)},
+  year    = {2025},
+  url     = {https://modelcontextprotocol.io/specification/2025-06-18},
+  note    = {Spécification officielle du protocole MCP (hosts, clients, serveurs ; outils, ressources, prompts)},
+}
+
+@online{mcp_intro,
+  author  = {Soria Parra, David and Spahr-Summers, Justin},
+  title   = {Introducing the Model Context Protocol},
+  year    = {2024},
+  url     = {https://www.anthropic.com/news/model-context-protocol},
+  note    = {Annonce du MCP par Anthropic, novembre 2024},
+}
+
+@online{agent_skills,
+  author  = {{Agent Skills}},
+  title   = {Agent Skills — Overview and Specification},
+  year    = {2025},
+  url     = {https://agentskills.io},
+  note    = {Format ouvert de savoir-faire procédural (SKILL.md) pour étendre les capacités des agents},
+}
+
+@online{spec_kit,
+  author  = {{GitHub}},
+  title   = {GitHub Spec Kit — toolkit pour le Spec-Driven Development},
+  year    = {2025},
+  url     = {https://github.com/github/spec-kit},
+  note    = {La spécification redevient la source de vérité exécutable (SDD)},
+}
+
+% ---- Évaluation des agents ----
+
+@article{swebench_2024,
+  author  = {Jimenez, Carlos E. and Yang, John and Wettig, Alexander and Yao, Shunyu and Pei, Kexin and Press, Ofir and Narasimhan, Karthik},
+  title   = {SWE-bench: Can Language Models Resolve Real-World GitHub Issues?},
+  journal = {arXiv preprint},
+  volume  = {arXiv:2310.06770},
+  year    = {2024},
+  url     = {https://arxiv.org/abs/2310.06770},
+  note    = {Benchmark de référence pour la résolution d'issues GitHub réelles (ICLR 2024)},
+}
+
+@article{passk_2021,
+  author  = {Chen, Mark and Tworek, Jerry and Jun, Heewoo and et al.},
+  title   = {Evaluating Large Language Models Trained on Code},
+  journal = {arXiv preprint},
+  volume  = {arXiv:2107.03374},
+  year    = {2021},
+  url     = {https://arxiv.org/abs/2107.03374},
+  note    = {Introduit la métrique pass@k et le jeu HumanEval (Codex / GitHub Copilot)},
+}
+
+% ---- Sécurité des LLM et des agents ----
+
+@online{owasp_llm_top10,
+  author  = {{OWASP}},
+  title   = {OWASP Top 10 for LLM Applications (2025)},
+  year    = {2025},
+  url     = {https://genai.owasp.org/llm-top-10/},
+  note    = {Risques LLM : injection de prompts, empoisonnement de données, handling de sorties, supply chain LLM, etc.},
+}
+
+@techreport{nist_ai6001,
+  author      = {Tabassi, Elham et al.},
+  title       = {Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile},
+  institution = {National Institute of Standards and Technology (NIST AI 600-1)},
+  year        = {2024},
+  url         = {https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf},
+  note        = {Profil GenAI du AI-RMF : risques propres aux modèles génératifs et actions de gestion},
+}
+
+@techreport{nist_ai1002,
+  author      = {Vassilev, Apostol and Oprea, Alina and Fordyce, Alie and Anderson, Hyrum and Davies, Xander and Hamin, Maia},
+  title       = {Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations},
+  institution = {National Institute of Standards and Technology (NIST AI 100-2e2025)},
+  year        = {2025},
+  url         = {https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf},
+  note        = {Taxonomie AML : injection de prompts, indirecte, empoisonnement, exfiltration, supply chain et sécurité des agents},
+}
+
+% ---- Réglementation & supply chain ----
+
+@misc{eu_ai_act,
+  author      = {{Parlement européen et Conseil de l'Union européenne}},
+  title       = {Règlement (UE) 2024/1689 établissant des règles harmonisées sur l'intelligence artificielle (IA Act)},
+  year        = {2024},
+  url         = {https://eur-lex.europa.eu/eli/reg/2024/1689/oj},
+  note        = {Calendrier : pratiques prohibées 02/2025, transparence 08/2026, haut risque reporté au 02/12/2027},
+}
+
+@online{slsa_v1,
+  author  = {{OpenSSF and Google}},
+  title   = {SLSA — Supply chain Levels for Software Artifacts, v1.0},
+  year    = {2023},
+  url     = {https://slsa.dev/spec/v1.0/},
+  note    = {Niveaux de garantie de la supply chain logicielle et formats d'attestation (provenance)},
+}
+
+@techreport{enisa_supply_chain,
+  author      = {{ENISA}},
+  title       = {Threat Landscape for Supply Chain Attacks},
+  institution = {European Union Agency for Cybersecurity (ENISA)},
+  year        = {2021},
+  url         = {https://www.enisa.europa.eu/publications/threat-landscape-for-supply-chain-attacks},
+  note        = {Analyse des attaques de la chaîne d'approvisionnement 2020–2021 (APTs, complexité croissante)},
+}
