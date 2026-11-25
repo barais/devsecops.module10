@@ -195,6 +195,14 @@ Malgré leur nature probabiliste, les LLM deviennent un accélérateur de la cha
 - *traduction* de rapports techniques de fournisseurs en décisions exploitables ;
 - *génération de code et de tests* : mises à jour, migrations, revue de PR.
 
+== La contrepartie structurelle
+
+À ces apports répond une contrepartie structurelle :
+
+- une *hallucination sur une version de dépendance* peut casser un build ou installer un paquet malfaisant ;
+- une connaissance *périmée* ignore les CVE récentes (vulnérabilités < 6 mois souvent hors du corpus) ;
+- l'*automatisation masque le risque* : ce qui est fluide semble sûr, alors qu'aucune garantie n'existe.
+
 #alert(color: rgb("#b91c1c"), icon: "⚠")[
   Le LLM *invente en toute confiance* (hallucinations) quand la réponse n'est pas dans sa distribution. Une sortie plausible ≠ une sortie vraie. Sa connaissance se *fige* à la date d'entraînement → données obsolètes sur les dépendances, les CVE, les versions. Il faut donc un *harnais déterministe* autour : grounding, schémas typés, validation.
 ]
@@ -284,6 +292,7 @@ Les *Skills* (standard ouvert depuis fin 2025 @agent_skills) sont la *mémoire p
 - *Skills* : savoir-faire procédural (comment faire) — ≈ 0 token au repos, chargé à la demande.
 - *MCP* : connectivité externe (outils, données, APIs) — plus coûteux en contexte (~55k tokens pour 5 serveurs avant *tool search*).
 - *CLAUDE.md / AGENTS.md* : contexte permanent — à garder court.
+- *Versioning* : skills versionnés dans le repo (`.claude/skills/`, `.agents/skills/`) → *partage d'équipe immédiat*.
 
 #alert(color: rgb("#b45309"), icon: "⚠")[
   Un `SKILL.md` est du Markdown *exécuté* : lisez-le avant installation, auditez les scripts embarqués (appels réseau non documentés), privilégiez les sources vérifiées et gardez des Hooks `PreToolUse` (bloquer `rm`, `curl | sh`). Une dépendance supposée sûre (skill, plugin, serveur MCP) est un *nouveau maillon de la chaîne* : à *pinner* et auditer comme toute dépendance.
@@ -369,7 +378,7 @@ L'agent s'insère au cœur de la chaîne d'approvisionnement logicielle : il en 
 
 - *Empoisonnement de la chaîne* : confiance aveugle dans une dépendance « corrigée par l'agent » (typosquatting, dépendances confuses) ; SBOM/registres manipulés ; code généré qui introduit des dépendances inconnues non déclarées au SBOM.
 - *L'agent comme vecteur d'attaque* : un agent auto-fixer en CI peut appliquer un patch hostile d'origine tierce injectée ; identifiants de registres/CI exposés au contexte du modèle ; la *vitesse* masque la revue.
-- *Intégrité & traçabilité* : qui a signé cet artefact généré par un agent ? SBOM + signatures obligatoires ; les logs de décisions deviennent une preuve d'audit ; la non-rétention côté modèle doit être garantie par contrat (DPA).
+- *Intégrité & traçabilité* : qui a signé cet artefact généré par un agent ? SBOM + signatures obligatoires ; les logs de décisions deviennent une preuve d'audit (*RGPD art. 22*) ; la non-rétention côté modèle doit être garantie par contrat (DPA).
 
 #keypoint[
   *Cadre de défense* : moindre privilège sur chaque outil d'agent ; human-in-the-loop sur toute mutation irréversible ; evals en CI + scan SBOM à chaque commit ; isolation de l'agent dans une sandbox sans accès au réseau corporate.
